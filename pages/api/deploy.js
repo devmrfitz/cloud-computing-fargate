@@ -10,5 +10,5 @@ export default function handler(req, res) {
 
   shell.rm('-rf', `/tmp/${folderName}`);
 
-  res.status(201).json({ success: true })
+  res.status(201).json({ success: true }) 
 }
