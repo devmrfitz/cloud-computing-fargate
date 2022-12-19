@@ -6,9 +6,9 @@ export default function handler(req, res) {
   shell.exec(`git clone ${repoURL} /tmp/${folderName}`);
 
   // deploy the repo
-  shell.exec(`kubectl apply -f /tmp/${folderName}/${kubeConfigPath}`);
+  let output = shell.exec(`kubectl apply -f /tmp/${folderName}/${kubeConfigPath}`);
 
   shell.rm('-rf', `/tmp/${folderName}`);
 
-  res.status(201).json({ success: true }) 
+  res.status(201).json({ success: true , }) 
 }
