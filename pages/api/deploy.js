@@ -6,7 +6,7 @@ export default function handler(req, res) {
   shell.exec(`git clone ${repoURL} /tmp/${folderName}`);
 
   // deploy the repo
-  let output = shell.exec(`kubectl apply -f /tmp/${folderName}/${kubeConfigPath}`);
+  shell.exec(`vagrant ssh leader -c "kubectl apply -f /tmp/${folderName}/${kubeConfigPath}"`);
 
   shell.rm('-rf', `/tmp/${folderName}`);
 
