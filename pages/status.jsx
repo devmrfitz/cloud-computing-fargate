@@ -7,7 +7,7 @@ export default function Status(req, res) {
     fetch('/api/show_status')
       .then(res => res.json())
       .then(data => {
-        setStatus(data.status);
+        setStatus(data);
       })
   }, []);
 
