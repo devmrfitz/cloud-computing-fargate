@@ -61,7 +61,7 @@ function Home() {
         <h1>Home</h1>
         <hr />
         <h1>Pod Status Report</h1>
-        
+
         <input
         type="text"
         placeholder="Repository URL"
@@ -172,7 +172,7 @@ function Home() {
           axios
             .post("/api/add_node", {})
             .then((res) => {
-              console.log(res), " is res";
+              console.log(res, " is res");
               if (res.status === 201) {
                 alert("Node added successfully.");
               }
